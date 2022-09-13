@@ -53,10 +53,6 @@ class EmqxErlang < Formula
     system "./configure", *args
     system "make"
     system "make", "install"
-
-    # Build the doc chunks (manpages are also built by default)
-    system "make", "docs", "DOC_TARGETS=chunks"
-    ENV.deparallelize { system "make", "install-docs" }
   end
 
   def caveats
